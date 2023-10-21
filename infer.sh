@@ -4,6 +4,8 @@ HOST=localhost
 PORT=5000
 DATA=$(cat "input_example.json")
 MODEL="model-example-aaaa"
+PREDICTED_FEATURES="['eod_market_data___mcd_us__open']"
+
 
 # Define colors
 green='\033[0;32m'
@@ -35,6 +37,7 @@ for prediction in "${predictions[@]}"; do
 done
 
 # Print the predictions in a table with colors
+echo " $PREDICTED_FEATURES "
 echo "---------------------------------------"
 for i in "${!predictions[@]}"; do
   if (( $(echo "${predictions[i]} == $largest" | bc -l) )); then
