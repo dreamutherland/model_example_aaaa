@@ -32,7 +32,11 @@ docker run -d -p PORT:PORT jleighsutherland/model_example_aaaa:v3
 
 ### Test "model_example_aaaa" by executing `./infer.sh` 
 
-__via infer.sh__ 
+_This model predicts features:_
+
+['eod_market_data___mcd_us__open']
+
+__infer via infer.sh__ 
 
 
 ```
