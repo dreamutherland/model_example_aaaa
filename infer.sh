@@ -13,6 +13,7 @@ red='\033[0;31m'
 yellow='\033[1;33m'
 darker_gray_blue='\033[0;34;2m'
 dark_gray_blue='\033[38;5;67m'
+bronze='\033[38;5;95m'
 reset='\033[0m'
 
 echo -e "kubectl port-forward -n serve-model-$MODEL svc/$MODEL-service 5000:5000 2>&1 >/dev/null" | pbcopy
@@ -37,7 +38,7 @@ for prediction in "${predictions[@]}"; do
 done
 
 # Print the predictions in a table with colors
-echo -e "${dark_gray_blue} ${PREDICTED_FEATURES} ${clear}"
+echo -e "${bronze} ${PREDICTED_FEATURES} ${reset}"
 echo "---------------------------------------"
 for i in "${!predictions[@]}"; do
   if (( $(echo "${predictions[i]} == $largest" | bc -l) )); then
