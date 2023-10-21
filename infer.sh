@@ -37,7 +37,7 @@ for prediction in "${predictions[@]}"; do
 done
 
 # Print the predictions in a table with colors
-echo -e "${dark_gray_blue} $PREDICTED_FEATURES ${clear}"
+echo -e "${dark_gray_blue} ${PREDICTED_FEATURES} ${clear}"
 echo "---------------------------------------"
 for i in "${!predictions[@]}"; do
   if (( $(echo "${predictions[i]} == $largest" | bc -l) )); then
