@@ -37,7 +37,7 @@ for prediction in "${predictions[@]}"; do
 done
 
 # Print the predictions in a table with colors
-echo " $PREDICTED_FEATURES "
+echo " ${yellow}$PREDICTED_FEATURES${clear} "
 echo "---------------------------------------"
 for i in "${!predictions[@]}"; do
   if (( $(echo "${predictions[i]} == $largest" | bc -l) )); then
@@ -50,3 +50,5 @@ for i in "${!predictions[@]}"; do
   printf "Prediction %d: ${color}%.2f${reset}\n" "$((i + 1))" "${predictions[i]}"
 done
 echo "---------------------------------------"
+
+echo -e "\n   ${dark_gray_blue}ctrl-c ${darker_gray_blue}to end inference${reset}\n\n"
