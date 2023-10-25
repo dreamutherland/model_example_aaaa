@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY model /app/model
 
+COPY gradio /app/gradio
+
 RUN pip install -r model/requirements.txt
 
 EXPOSE 5000
